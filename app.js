@@ -9,11 +9,11 @@ app.use(express.json())
 app.use("/users", userRouter)
 
 
+
 database.on('open',()=>{
     app.listen(9080,()=>{
 console.log('Server is Running');
-
-    })
+})
 })
 
 database.on("error",()=>{
