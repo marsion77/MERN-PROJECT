@@ -28,12 +28,12 @@ const login = async (req, res) => {
 // Verify Login
 const verifyLogin = async (req,res)=>{
         try {
-        const data = await UserService.verifyLoginData(req.body);
+        const data = await userService.verifyLoginData(req.body);
         res.send(data);
 
     } catch (error) {
         console.error(error);
-        res.status(500).send({ message: "Internal server error" });
+        res.status(500).send({message: "Internal server error"});
     }
 
 }

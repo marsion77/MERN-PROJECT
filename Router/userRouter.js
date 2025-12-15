@@ -13,6 +13,4 @@ router.post("/login", userController.login)
 router.post("/loginverify", userController.verifyLogin)
 
 
-
-
 module.exports = router

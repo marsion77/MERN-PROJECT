@@ -53,7 +53,22 @@ const loginUserService = async (email, password) => {
 };
 
 // Verify Login
-const verifyLoginData = async()=>{
+const verifyLoginData = async(body)=>{
+
+  console.log(body);
+  
+
+  const {email, otp} = body
+
+  const Otpdata = await credentialModel.findOne({"email": body.email})
+
+  if(!Otpdata){
+        return { success: false, message: "OTP not found. Please request a new one." };
+
+  }return{
+     success: true,
+    message: "OTP verified successfully"
+  }
 
 }
 
