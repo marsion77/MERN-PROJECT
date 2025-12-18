@@ -8,7 +8,14 @@ const createuser = async (req,res)=>{
     console.log(userdata);   
 }
 
-// Creating Login
+// Login the User
+const loginUser = async(req,res)=>{
+  user = await userService.loginUserData(req.body)
+  res.send(user)
+}
+
+
+// Creating Login OTP
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -42,6 +49,7 @@ const verifyLogin = async (req,res)=>{
 
 module.exports = {
     createuser,
+    loginUser,
     login,
     verifyLogin
 }

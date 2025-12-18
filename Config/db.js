@@ -12,3 +12,4 @@ mongoose.connect('mongodb+srv://Marison:Marison@cluster0.5f3ypg5.mongodb.net/')
 })
 
 module.exports = mongoose.connection
+

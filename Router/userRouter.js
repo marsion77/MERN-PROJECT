@@ -6,7 +6,10 @@ const userController = require("../Controller/userController")
 // Adding User
 router.post("/adduser",userController.createuser)
 
-// Login OTP Generating
+// Login User
+router.post("/loginUser", userController.loginUser)
+
+// Login OTP Generating (For Forgot Password)
 router.post("/login", userController.login)
 
 // Login Verification
