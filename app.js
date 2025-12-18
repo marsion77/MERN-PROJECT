@@ -7,6 +7,9 @@ const userRouter = require("./Router/userRouter")
 app.use(express.json())
 
 app.use("/users", userRouter)
+app.use("/category",)
+// app.use("/menu")
+// app.use("/quantity") 
 
 
 
