@@ -4,14 +4,11 @@ const sendMail = require("../Utils/mailer")
 
 
 // Creating a UserData
-const createUserData = async (body)=>{
-    data = await userModel.create(body)
-    console.log(body);  
-    return data
+const createUserData = async (body) => {
+  data = await userModel.create(body)
+  console.log(body);
+  return data
 }
-
-
-
 // Login Creation
 const generateOTP = () => {
   return Math.floor(100000 + Math.random() * 900000);
@@ -31,7 +28,7 @@ const loginUserService = async (email, password) => {
 
   const otp = generateOTP();
 
- 
+
   const credential = new credentialModel({
     email: user.email,
     password: user.password,
@@ -53,27 +50,27 @@ const loginUserService = async (email, password) => {
 };
 
 // Verify Login
-const verifyLoginData = async(body)=>{
+const verifyLoginData = async (body) => {
 
   console.log(body);
-  
 
-  const {email, otp} = body
 
-  const Otpdata = await credentialModel.findOne({"email": body.email})
+  const { email, otp } = body
 
-  if(!Otpdata){
-        return { success: false, message: "OTP not found. Please request a new one." };
+  const Otpdata = await credentialModel.findOne({ "email": body.email })
 
-  }return{
-     success: true,
+  if (!Otpdata) {
+    return { success: false, message: "OTP not found. Please request a new one." };
+
+  } return {
+    success: true,
     message: "OTP verified successfully"
   }
 
 }
 
 module.exports = {
-    createUserData,
-    loginUserService,
-    verifyLoginData
+  createUserData,
+  loginUserService,
+  verifyLoginData
 }
