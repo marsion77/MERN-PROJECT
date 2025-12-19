@@ -8,7 +8,14 @@ const createuser = async (req,res)=>{
     console.log(userdata);   
 }
 
-// Creating Login
+// Login the User
+const loginUser = async(req,res)=>{
+  user = await userService.loginUserData(req.body)
+  res.send(user)
+}
+
+
+// Creating Login OTP
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -28,20 +35,23 @@ const login = async (req, res) => {
 // Verify Login
 const verifyLogin = async (req,res)=>{
         try {
-        const data = await UserService.verifyLoginData(req.body);
+        const data = await userService.verifyLoginData(req.body);
         res.send(data);
 
     } catch (error) {
         console.error(error);
-        res.status(500).send({ message: "Internal server error" });
+        res.status(500).send({message: "Internal server error"});
     }
 
 }
 
 
 
+
+
 module.exports = {
     createuser,
+    loginUser,
     login,
     verifyLogin
 }

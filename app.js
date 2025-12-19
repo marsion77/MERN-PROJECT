@@ -2,14 +2,22 @@ const express = require('express')
 const app = express()
 const database = require("./Config/db")
 
-const userRouter = require("./Router/userRouter")
-
 app.use(express.json())
 
-app.use("/users", userRouter)
-app.use("/category",)
-// app.use("/menu")
-// app.use("/quantity") 
+const userRouter = require("./Router/userRouter")
+const itemsRouter = require("./Router/itemsRouter")
+const categoryRouter = require("../MERN-PROJECT/Router/categoryRouter")
+const menuRouter = require("./Router/menuRouter")
+const quantityRouter = require("./Router/quantityRouter")
+
+
+app.use("/users", userRouter) 
+app.use("/category", categoryRouter)
+app.use("/menu", menuRouter)
+app.use("/quantity", quantityRouter)
+
+app.use("/item", itemsRouter) 
+
 
 
 
