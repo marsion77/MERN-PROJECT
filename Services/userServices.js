@@ -10,8 +10,6 @@ const createUserData = async (body) => {
   console.log(body);
   return data
 }
-<<<<<<< HEAD
-=======
 
 
 // Login the User
@@ -38,7 +36,7 @@ const loginUserData = async (body) => {
   };
 };
 
->>>>>>> b0ba2bbace6522f315c034608d99b4563b374827
+
 // Login Creation
 const generateOTP = () => {
   return Math.floor(100000 + Math.random() * 900000);
@@ -53,10 +51,8 @@ const loginUserService = async (email, password) => {
   }
   const otp = generateOTP();
 
-<<<<<<< HEAD
 
-=======
->>>>>>> b0ba2bbace6522f315c034608d99b4563b374827
+
   const credential = new credentialModel({
     email: user.email,
     password: user.password,
@@ -74,7 +70,7 @@ const loginUserService = async (email, password) => {
 
 // Verify Login
 const verifyLoginData = async (body) => {
-<<<<<<< HEAD
+
 
   console.log(body);
 
@@ -86,32 +82,31 @@ const verifyLoginData = async (body) => {
   if (!Otpdata) {
     return { success: false, message: "OTP not found. Please request a new one." };
 
-=======
+
   console.log(body);
   const { email, otp } = body
   const Otpdata = await credentialModel.findOne({ "email": body.email })
 
   if (!Otpdata) {
     return { success: false, message: "OTP not found. Please request a new one." };
->>>>>>> b0ba2bbace6522f315c034608d99b4563b374827
+
   } return {
     success: true,
     message: "OTP verified successfully"
   }
 }
-
-//create category
-const createCategorydata = async (body)=>{
-        
 }
+
+// //create category
+// const createCategorydata = async (body)=>{
+        
+// }
 
 
 module.exports = {
   createUserData,
-<<<<<<< HEAD
-=======
   loginUserData,
->>>>>>> b0ba2bbace6522f315c034608d99b4563b374827
   loginUserService,
   verifyLoginData
 }
+
