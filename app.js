@@ -30,3 +30,4 @@ console.log('Server is Running');
 database.on("error",()=>{
     console.log('Error While running the server');  
 })
+

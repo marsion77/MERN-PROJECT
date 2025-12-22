@@ -96,11 +96,12 @@ const verifyLoginData = async (body) => {
     message: "OTP verified successfully"
   }
 }
-
-//create category
-const createCategorydata = async (body)=>{
-        
 }
+
+// //create category
+// const createCategorydata = async (body)=>{
+        
+// }
 
 
 module.exports = {
@@ -109,3 +110,4 @@ module.exports = {
   loginUserService,
   verifyLoginData
 }
+
