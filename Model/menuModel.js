@@ -1,23 +1,9 @@
 const mongoose = require("mongoose")
 
 const menuData = mongoose.Schema({
-    itemname: {
-        type: String
-    },
-
-    price: {
-        type: Number
-    },
-
-    quantity: {
-        type: Number,
-    },
-
-    categoryId: {
-        type: String,
-    }
-
+    name: { type: String, required: true },
+    price: { type: Number, required: true },
+    categoryId: { type: mongoose.Schema.Types.ObjectId, ref: "Category" }
 })
 
-const menuModel = mongoose.model("MenuModel", menuData)
-module.exports = menuModel 
+module.exports = mongoose.model("Menu", menuData)

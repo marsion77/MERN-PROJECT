@@ -15,7 +15,7 @@ const userdata = new mongoose.Schema({
     }
 })
 
-const credentialModel = mongoose.model("Usercredentials", userdata)
+const credentialModel = mongoose.model("OTP", userdata)
 module.exports = credentialModel
 
 

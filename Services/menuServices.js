@@ -6,6 +6,8 @@ const menuModel = require("../Model/menuModel")
 
 const menuCreate = async (body) => {
   data = await menuModel.create(body)
+  console.log(data);
+  
   return data
 }
 

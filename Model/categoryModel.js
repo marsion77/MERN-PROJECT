@@ -5,12 +5,7 @@ const categorydata = new mongoose.Schema({
             type: String,
             required: true 
           },
-
-          categoryId: {
-            type: String,
-            required: true
-          }
 })
 
-const categoryModel = mongoose.model("categoryData", categorydata)
+const categoryModel = mongoose.model("category", categorydata)
 module.exports = categoryModel 
