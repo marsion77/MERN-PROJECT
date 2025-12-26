@@ -7,6 +7,8 @@ const orderController = require("../Controller/orderController");
 router.post("/addorder", orderController.createOrder);
 
 // Get All Orders (with aggregation)
-router.get("/orders", orderController.getOrders);
+router.get("/orders/:id", orderController.getOrders);
 
 module.exports = router;
+
+
