@@ -1,8 +1,10 @@
 const express = require('express')
 const app = express()
 const database = require("./Config/db")
+const cors = require("cors");
 
 app.use(express.json())
+
 
 const userRouter = require("./Router/userRouter")
 const categoryRouter = require("./Router/categoryRouter")
@@ -12,6 +14,8 @@ const orderRouer = require("./Router/orderRouter")
 const wishlistRouter = require("./Router/wishlistRouter")
 
 
+
+app.use(cors());
 app.use("/users", userRouter) 
 app.use("/category", categoryRouter)
 app.use("/menu", menuRouter)
