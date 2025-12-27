@@ -7,8 +7,23 @@ const quantityCreate = async (body) => {
   return data
 }
 
+// ✅ ADD THESE GET FUNCTIONS
+const getAllQuantities = async () => {
+  data = await quantityModel.find()
+  return data
+}
 
+const getQuantityById = async (id) => {
+  data = await quantityModel.findById(id)
+  if (!data) {
+    throw new Error("Quantity not found")
+  }
+  return data
+}
 
 module.exports = {
-    quantityCreate
+    quantityCreate,
+    getAllQuantities,
+    getQuantityById
+
 } 

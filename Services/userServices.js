@@ -73,7 +73,7 @@ const loginUserService = async (email) => {
   if (!user) throw new Error("User with this email does not exist");
 
   const otp = generateOTP();
-  
+
   // 1. Update or Create the OTP record in the DB
   await credentialModel.findOneAndUpdate(
     { email },
@@ -84,7 +84,7 @@ const loginUserService = async (email) => {
   // 2. ACTUALLY SEND THE MAIL
   try {
     // Ensure sendMail is imported correctly and is an async function
-    await sendMail(email, otp); 
+    await sendMail(email, otp);
     console.log(`✅ OTP ${otp} successfully sent to ${email}`);
   } catch (mailError) {
     console.error("❌ Mailer Error:", mailError);

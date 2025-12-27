@@ -17,14 +17,11 @@ const wishlistRouter = require("./Router/wishlistRouter")
 
 app.use(cors());
 app.use("/users", userRouter) 
-app.use("/category", categoryRouter)
+app.use("/categories", categoryRouter)
 app.use("/menu", menuRouter)
 app.use("/quantity", quantityRouter)
 app.use("/order",orderRouer)
 app.use("/wishlist", wishlistRouter)
-
-
-
 
 
 

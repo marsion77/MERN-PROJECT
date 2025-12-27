@@ -12,7 +12,7 @@ const createuser = async (req, res) => {
 };
 
 // Login the User
-const loginUser = async(req,res)=>{
+const loginUser = async (req, res) => {
   user = await userService.loginUserData(req.body)
   res.send(user)
 }
@@ -51,13 +51,13 @@ const resetPassword = async (req, res) => {
 
 
 module.exports = {
-    createuser,
-    loginUser,
-    // login,
-    // verifyLogin
-    sendOTP,
-    verifyOTP,
-    resetPassword
+  createuser,
+  loginUser,
+  // login,
+  // verifyLogin
+  sendOTP,
+  verifyOTP,
+  resetPassword
 
 
 }

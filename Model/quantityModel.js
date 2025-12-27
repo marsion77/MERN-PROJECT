@@ -1,7 +1,9 @@
+// ✅ FIXED: Added missing variable assignment
 const mongoose = require("mongoose")
 
 const quantitydata = new mongoose.Schema({
     value: { type: Number, required: true }
 })
 
-module.exports = mongoose.model("Quantity", quantitydata)
+const quantityModel = mongoose.model("Quantity", quantitydata)
+module.exports = quantityModel

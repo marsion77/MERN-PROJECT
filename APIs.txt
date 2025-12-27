@@ -6,6 +6,8 @@ POST http://localhost:9080/users/loginverify     -> Login Verification
 
 # Category APIs
 POST http://localhost:9080/category/createCategory -> Create Category
+✅ GET all:    http://localhost:9080/categories/getCategories
+✅ GET one:    http://localhost:9080/categories/getCategory/64fabc1234567890abcdef12
 
 # Menu APIs
 POST http://localhost:9080/menu/createMenu         -> Create Menu
@@ -13,8 +15,19 @@ POST http://localhost:9080/menu/createMenu         -> Create Menu
 # Order APIs
 POST http://localhost:9080/order/addorder          -> Add Order
 
-# Quantity APIs
-POST http://localhost:9080/quantity/addQuantity    -> Add Quantity
 
 # Order APIs
  http://localhost:9080/order/addorder    -> Add Order
+
+
+# Quantity APIs
+POST http://localhost:9080/quantity/addQuantity    -> Add Quantity
+✅ GET all:     http://localhost:9080/quantity/getQuantities
+✅ GET one:     http://localhost:9080/quantity/getQuantity/64fabc1234567890abcdef12
+
+
+
+
+
+
+
