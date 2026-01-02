@@ -1,33 +1,22 @@
-const categoryModel = require("../Model/categoryModel")
+const Category = require("../Model/categoryModel");
 
+exports.createCategory = async (body) => {
+  const category = new Category(body);
+  return await category.save();
+};
 
+exports.getAllCategories = async () => {
+  return await Category.find();  // Returns all 4 categories [web:25]
+};
 
-//creating Category
+exports.getCategoryById = async (id) => {
+  return await Category.findById(id);
+};
 
-const categoryCreate = async (body) => {
-  data = await categoryModel.create(body)
-  return data
-}
+exports.updateCategory = async (id, body) => {
+  return await Category.findByIdAndUpdate(id, body, { new: true });
+};
 
-
-
-// ✅ ADD THESE GET FUNCTIONS
-const getAllCategories = async () => {
-  data = await categoryModel.find()
-  return data
-}
-
-const getCategoryById = async (id) => {
-  data = await categoryModel.findById(id)
-  if (!data) {
-    throw new Error("Category not found")
-  }
-  return data
-}
-
-module.exports = {
-    categoryCreate,
-    getAllCategories,
-    getCategoryById
-
-} 
+exports.deleteCategory = async (id) => {
+  return await Category.findByIdAndDelete(id);
+};
