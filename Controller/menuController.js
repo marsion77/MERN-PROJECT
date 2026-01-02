@@ -1,16 +1,37 @@
 const menuServices = require("../Services/menuServices")
 
-
-
-//creating the menu
+// Create a menu item
 const createMenu = async (req, res) => {
-    data = await menuServices.menuCreate(req.body)
-    console.log(data);
+    try {
+        const data = await menuServices.menuCreate(req.body)
+        res.status(201).send(data)
+    } catch (error) {
+        res.status(500).send({ message: error.message })
+    }
+}
 
-    res.send(data)
+// Get all menu items
+const getMenus = async (req, res) => {
+    try {
+        const data = await menuServices.getAllMenus()
+        res.send(data)
+    } catch (error) {
+        res.status(500).send({ message: error.message })
+    }
+}
 
+// Get menu by ID
+const getMenu = async (req, res) => {
+    try {
+        const data = await menuServices.getMenuById(req.params.id)
+        res.send(data)
+    } catch (error) {
+        res.status(404).send({ message: error.message })
+    }
 }
 
 module.exports = {
-    createMenu
+    createMenu,
+    getMenus,
+    getMenu
 }

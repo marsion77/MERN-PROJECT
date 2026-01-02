@@ -1,16 +1,23 @@
 const menuModel = require("../Model/menuModel")
 
-
-
-//creating Menu
-
 const menuCreate = async (body) => {
-  data = await menuModel.create(body)
-  console.log(data);
-  
-  return data
+    const data = await menuModel.create(body)
+    return data
+}
+
+const getAllMenus = async () => {
+    const data = await menuModel.find().populate("categoryId", "name")
+    return data
+}
+
+const getMenuById = async (id) => {
+    const data = await menuModel.findById(id).populate("categoryId", "name")
+    if (!data) throw new Error("Menu item not found")
+    return data
 }
 
 module.exports = {
-    menuCreate
-} 
+    menuCreate,
+    getAllMenus,
+    getMenuById
+}
