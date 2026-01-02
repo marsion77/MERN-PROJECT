@@ -5,6 +5,10 @@ const categorydata = new mongoose.Schema({
             type: String,
             required: true 
           },
+          decription:{
+            type:String,
+            required: true
+          }
 })
 
 const categoryModel = mongoose.model("category", categorydata)
