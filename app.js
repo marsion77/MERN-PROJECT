@@ -1,3 +1,5 @@
+require('dotenv').config(); 
+
 const express = require('express')
 const cors = require("cors");  // ← ADD THIS LINE
 const app = express()
@@ -11,6 +13,10 @@ const userRouter = require("./Router/userRouter")
 const categoryRouter = require("./Router/categoryRouter")
 const menuRouter = require("./Router/menuRouter")
 const quantityRouter = require("./Router/quantityRouter")
+
+
+const orderRoutes = require('./Router/orderRouter');
+app.use('/api/order', orderRoutes);
 
 
 const cartRoutes = require('./Router/cartRouter');
